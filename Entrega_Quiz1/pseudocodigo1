@@ -1,0 +1,61 @@
+Quiz 1 Pseint
+
+Pregunta 1 : Respuesta B imprime los numeros del 1 al 10
+Pregunta 2 : Respuesta A 100
+Pregunta 3 : Respuesta C Mientras
+Pregunta 4 : Respuesta C Los divisores de 6
+Pregunta 5 : Respuesta A 54321 
+
+Parte Practica Pseint
+
+Algoritmo quiz1
+	Definir edadUsuario Como Entero
+	Definir promedioEdad Como Real
+	Definir cantEdades Como Entero
+	Definir edadAlta Como Entero
+	Definir opcionUsuario Como Caracter
+	
+	
+	Mientras edadUsuario >= 0 Hacer
+		
+		Escribir "Ingresar edad: "
+		Leer edadUsuario
+		
+		Si edadUsuario >= 0 Entonces
+			
+			
+			cantEdades = cantEdades + 1
+			promedioEdad = promedioEdad + edadUsuario
+		FinSi
+		
+		
+		Si edadUsuario > edadAlta Entonces
+			
+			edadAlta = edadUsuario
+			
+		FinSi
+		
+		
+		
+	FinMientras
+	
+	
+	Escribir "Seleccione operacion (P/M): "
+	Leer opcionUsuario
+	
+	
+	
+	Si cantEdades != 0 Entonces
+		Segun opcionUsuario Hacer
+			"P":
+				Escribir "El promedio de edades es: ", promedioEdad/cantEdades 
+			"M":
+				Escribir "La edad mayor es: ", edadAlta 
+		Fin Segun
+	SiNo
+		Escribir "Pailas se tiro el codigo, no se puede dividir por cero, ingrese al menos una edad valida"
+	FinSi
+
+FinAlgoritmo
+
+

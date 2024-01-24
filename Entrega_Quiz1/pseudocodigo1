@@ -42,7 +42,7 @@ Algoritmo quiz1
 	
 	Escribir "Seleccione operacion (P/M): "
 	Leer opcionUsuario
-	
+	 
 	
 	
 	Si cantEdades != 0 Entonces

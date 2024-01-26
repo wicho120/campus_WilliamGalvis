@@ -1,0 +1,6 @@
+print("ejemplo suma: ", 25+30)
+print("Ejemplo multiplicacion: ", (55*30))
+print("Ejemplo exponenciacion: ", (10**2))
+print("Ejemplo igualacion: ", (55==55))
+print("Ejemplo division: ", (55/30))
+print("Ejemplo multiplicacion: ", (55*30))

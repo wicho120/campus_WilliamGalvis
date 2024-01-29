@@ -108,14 +108,3 @@ for i in range(numStop-2):
     print(numFibonacci1)
     numFibonacci2 = numFibonacci3
     numFibonacci3 = numFibonacci1
-
-#ejercicio 9
-    
-opcion = int(input("Bienvenido al conversor de temperatura, que desea hacer.\n1. Celsius a Fahrenheit\n2. Fahrenheit a Celsius"))
-
-if opcion == 1:
-    temp = int(input("Por favor ingrese la temperatura en Celsius: "))
-    print("La temperatura al pasarla a Fahrenheit es: ", (temp*33.8)) 
-elif opcion ==2:
-    temp = int(input("Por favor ingrese la temperatura en Fahrenheit: "))
-    print("La temperatura al pasarla a Celsius es: ", (temp/33.8))    

@@ -41,7 +41,7 @@ for i in palabraEvaluar:
     if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
         contVocales += 1
     elif i != " ":
-        contConsonantes += 1 +
+        contConsonantes += 1 
 
 print("El texto ingresado tiene ", contConsonantes, " consonantes y tiene ", contVocales, " vocales")
 

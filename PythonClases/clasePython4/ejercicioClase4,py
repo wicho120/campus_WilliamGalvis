@@ -1,0 +1,97 @@
+
+import operator
+import os as limpiar
+from operator import itemgetter
+
+
+def añadirTareas(diccionarioTarea):
+    num = 0
+
+    if len(diccionarioTarea) == 0:
+
+        nombreTarea = input("Por favor ingrese un nombre para la tarea: ")
+        prioridadTarea = input("Por favor ingrese una prioridad para esta tarea: ")
+        diccionarioTarea[nombreTarea] = int(prioridadTarea)
+        diccionarioTarea = sorted(diccionarioTarea.items(), key=operator.itemgetter(1)) 
+    else:
+        
+        nombreTarea = input("Por favor ingrese un nombre para la tarea: ")
+        for i in diccionarioTarea:
+            
+            if nombreTarea == i:
+                print("La tarea ingresada ya se habia registrado previamente")
+                break
+            else:
+                num = num + 1
+                
+
+        if len(diccionarioTarea)-1 == num or len(diccionarioTarea) == num:
+            
+            prioridadTarea = input("Por favor ingrese una prioridad para esta tarea: ")
+            diccionarioTarea[nombreTarea] = int(prioridadTarea)
+            diccionarioTarea = sorted(diccionarioTarea.items(), key=itemgetter(1), reverse=True)
+    print(input("\nPulsa cualquier tecla para continuar"))
+    
+
+
+def eliminarTareas(diccionarioTarea):
+    num = 0 
+    nombreTareElim = input("Por favor ingrese el nombre de la tarea a eliminar: ")
+
+    for i in diccionarioTarea:
+        if nombreTareElim == i:
+            diccionarioTarea.pop(nombreTareElim)
+        else:
+            num = num + 1
+            if len(diccionarioTarea) == num:
+
+                print("No se encontro la tarea a eliminar en la lista de tareas pendientes")
+
+    print(input("\nPulsa cualquier tecla para continuar"))
+
+def mostrarTareas(diccionarioTarea):
+
+    for i in diccionarioTarea:
+        print(""""
+        ++++++++++++++++++++++++++++++
+        +     TAREAS  PENDIENTES     +
+        ++++++++++++++++++++++++++++++
+        """)
+        print("".join([f"La tarea: {i}, tienes una prioridad de: {diccionarioTarea[i]}\n" for i in diccionarioTarea]))
+
+    print(input("\nPulsa enter para continuar"))
+
+
+tareas = {}
+
+menu=["Añadir Tarea","Ver Tareas","Eliminar Tarea", "Salir"]
+while(True):
+
+    limpiar.system("cls")
+    print(""""
+    ++++++++++++++++++++++++++++++
+    + MENU    GESTION    TAREAS  +
+    ++++++++++++++++++++++++++++++
+    """)
+    print("".join([f"{i+1}. {val}\n" for i,val in enumerate(menu)]))
+    try:
+        opc=int(input())
+        if(opc<=len(menu) and opc>0):
+            print(">>")
+            if opc == 1:
+                añadirTareas(tareas)
+                print(tareas)
+            elif opc == 2:
+                mostrarTareas(tareas)
+            elif opc == 3:
+                eliminarTareas(tareas)
+            elif opc == 4:
+                break
+            
+
+    except ValueError:
+        print("Usuario no *** no recibime numero")
+
+
+
+
